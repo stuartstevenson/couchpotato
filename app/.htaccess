@@ -290,7 +290,7 @@ AddDefaultCharset utf-8
 # Block access to directories without a default document.
 # Usually you should leave this uncommented because you shouldn't allow anyone
 # to surf through every directory on your server (which may includes rather
-# private places like the CMS's directories).
+# private places like the CMS"s directories).
 
 <IfModule mod_autoindex.c>
     Options -Indexes
@@ -352,7 +352,7 @@ AddDefaultCharset utf-8
 # ------------------------------------------------------------------------------
 
 # Avoid displaying the exact Apache version number, the description of the
-# generic OS-type and the information about Apache's compiled-in modules.
+# generic OS-type and the information about Apache"s compiled-in modules.
 
 # ADD THIS DIRECTIVE IN THE `httpd.conf` AS IT WILL NOT WORK IN THE `.htaccess`!
 
@@ -379,7 +379,7 @@ AddDefaultCharset utf-8
     </IfModule>
 
     # Compress all output labeled with one of the following MIME-types
-    # (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
+    # (for Apache versions below 2.3.7, you don"t need to enable `mod_filter`
     #  and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines
     #  as `AddOutputFilterByType` is still in the core directives).
     <IfModule mod_filter.c>
@@ -419,7 +419,7 @@ AddDefaultCharset utf-8
 # | ETag removal                                                               |
 # ------------------------------------------------------------------------------
 
-# Since we're sending far-future expires headers (see below), ETags can
+# Since we"re sending far-future expires headers (see below), ETags can
 # be removed: http://developer.yahoo.com/performance/rules.html#etags.
 
 # `FileETag None` is not enough for every server.
@@ -433,7 +433,7 @@ FileETag None
 # | Expires headers (for better cache control)                                 |
 # ------------------------------------------------------------------------------
 
-# The following expires headers are set pretty far in the future. If you don't
+# The following expires headers are set pretty far in the future. If you don"t
 # control versioning with filename-based cache busting, consider lowering the
 # cache time for resources like CSS and JS to something like 1 week.
 
@@ -492,7 +492,7 @@ FileETag None
 # | Filename-based cache busting                                               |
 # ------------------------------------------------------------------------------
 
-# If you're not using a build process to manage your filename version revving,
+# If you"re not using a build process to manage your filename version revving,
 # you might want to consider enabling the following directives to route all
 # requests such as `/css/style.12345.css` to `/css/style.css`.
 
