@@ -1,15 +1,19 @@
-'use strict';
+"use strict";
 
 /**
  * @ngdoc service
- * @name couchpotatoApp.LocalTvConfig
+ * @name couchPotatoApp.LocalTvConfig
  * @description
  * # LocalTvConfig
- * Service in the couchpotatoApp.
+ * Service in the couchPotatoApp.
  */
-angular.module('couchpotatoApp')
-	.service('LocalTvConfig', [function LocalTvConfig() {
-		const localStorageKey = "tvConfig";
+angular.module("couchPotatoApp")
+	.service("LocalTvConfig", [function LocalTvConfig() {
+		var localStorageKey = "tvConfig";
+
+		function getLocalTvConfig(){
+			return window.localStorage.getItem(localStorageKey);
+		}
 
 		this.localTvConfig = getLocalTvConfig();
 
@@ -18,7 +22,4 @@ angular.module('couchpotatoApp')
 			this.localTvConfig = tvConfig;
 		};
 
-		function getLocalTvConfig(){
-			return window.localStorage.getItem(localStorageKey);
-		}
 	}]);

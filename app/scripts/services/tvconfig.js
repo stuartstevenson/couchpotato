@@ -1,33 +1,13 @@
-'use strict';
+"use strict";
 
 /**
  * @ngdoc service
- * @name couchpotatoApp.TvConfig
+ * @name couchPotatoApp.TvConfig
  * @description
  * # TvConfig
- * Service in the couchpotatoApp.
+ * Service in the couchPotatoApp.
  */
-angular.module('couchpotatoApp')
-	.service('TvConfig', ["$http", function TvConfig($http) {
-		const restEndPoint = "/localhost:8050/tvconfig";
-
-		this.getAllTvConfigPromise = function(){
-			return $http.get(restEndPoint);
-		};
-
-		this.getTvConfigPromise = function(id){
-			return $http.get(restEndPoint + "/" + id);
-		};
-
-		this.getAddTvConfigPromise = function(tvConfig){
-			return $http.put(restEndPoint, tvConfig);
-		};
-
-		this.getUpdateTvConfigPromise = function(tvConfig){
-			return $http.post(restEndPoint, tvConfig);
-		};
-
-		this.getDeleteTvConfigPromise = function(id){
-			return $http.delete(restEndPoint + "/" + id);
-		};
+angular.module("couchPotatoApp")
+	.service("TvConfig", ["$resource", function TvConfig($resource) {
+		return $resource("/localhost:6060/tvconfig/:id");
 	}]);

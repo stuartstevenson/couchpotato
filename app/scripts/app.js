@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name monitorApp
+ * @name couchPotatoApp
  * @description
- * # monitorApp
+ * # couchPotatoApp
  *
  * Main module of the application.
  */
 angular
-	.module("monitorApp", [
+	.module("couchPotatoApp", [
 		"ngAnimate",
 		"ngCookies",
 		"ngResource",
@@ -22,6 +22,10 @@ angular
 			.when("/", {
 				templateUrl: "views/main.html",
 				controller: "MainCtrl"
+			})
+			.when("/tvguide", {
+				templateUrl: "views/tvguide.html",
+				controller: "TvGuideCtrl"
 			})
 			.otherwise({
 				redirectTo: "/"

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
-<body ng-app="monitorApp">
+<body ng-app="couchPotatoApp">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -38,7 +38,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-
+					<li>
+						<a href="#/tvguide">
+							Tv Guide
+							<span class="glyphicon glyphicon-calendar"></span>
+						</a>
+					</li>
                 </ul>
             </div>
         </div>
@@ -91,6 +96,9 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/tvguide.js"></script>
+<script src="scripts/services/localtvconfig.js"></script>
+<script src="scripts/services/tvconfig.js"></script>
 <!-- endbuild -->
 </body>
 </html>

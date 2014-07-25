@@ -3,7 +3,7 @@
 describe('Service: TvConfig', function () {
 
   // load the service's module
-  beforeEach(module('couchpotatoApp'));
+  beforeEach(module('couchPotatoApp'));
 
   // instantiate service
   var TvConfig;
