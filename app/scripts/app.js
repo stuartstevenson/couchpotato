@@ -27,6 +27,14 @@ angular
 				templateUrl: "views/tvguide.html",
 				controller: "TvGuideCtrl"
 			})
+			.when("/tvconfig", {
+				templateUrl: "views/addedittvconfig.html",
+				controller: "AddEditTvConfigCtrl"
+			})
+			.when("/tvconfig/:id", {
+				templateUrl: "views/addedittvconfig.html",
+				controller: "AddEditTvConfigCtrl"
+			})
 			.otherwise({
 				redirectTo: "/"
 			});

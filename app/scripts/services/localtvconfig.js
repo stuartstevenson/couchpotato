@@ -8,11 +8,15 @@
  * Service in the couchPotatoApp.
  */
 angular.module("couchPotatoApp")
-	.service("LocalTvConfig", [function LocalTvConfig() {
+	.service("LocalTvConfig", ["$sce", function LocalTvConfig($sce) {
 		var localStorageKey = "tvConfig";
 
 		function getLocalTvConfig(){
-			return window.localStorage.getItem(localStorageKey);
+			var tvConfig = JSON.parse(window.localStorage.getItem(localStorageKey));
+			for(var url in tvConfig.urls){
+				tvConfig.urls[url].url = $sce.trustAsResourceUrl(tvConfig.urls[url].url);
+			}
+			return tvConfig;
 		}
 
 		this.localTvConfig = getLocalTvConfig();

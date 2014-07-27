@@ -5,15 +5,26 @@
 			<tr>
 				<th>Id</th>
 				<th>Description</th>
+				<th>Urls</th>
 				<th></th>
 			</tr>
 			</thead>
 			<tbody>
 			<tr ng-repeat="tvConfig in tvConfigs">
-				<td>{{id}}</td>
-				<td>{{description}}</td>
+				<td>{{tvConfig.id}}</td>
+				<td>{{tvConfig.description}}</td>
 				<td>
-					<button class="btn btn-primary" ng-click="setLocalTvConfig(tvConfig)">
+					<select>
+						<option ng-repeat="screen in tvConfig.urls">{{screen.url}} ({{screen.interval}} sec)</option>
+					</select>
+				</td>
+				<td>
+					<button class="btn btn-primary btn-small" ng-click="edit(tvConfig)">
+						Edit
+						<span class="glyphicon glyphicon-edit"></span>
+					</button>
+					<button class="btn btn-primary btn-small" ng-click="setLocalTvConfig(tvConfig)">
+						Set current
 						<span class="glyphicon glyphicon-save"></span>
 					</button>
 				</td>

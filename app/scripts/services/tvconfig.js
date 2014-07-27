@@ -9,5 +9,5 @@
  */
 angular.module("couchPotatoApp")
 	.service("TvConfig", ["$resource", function TvConfig($resource) {
-		return $resource("/localhost:6060/tvconfig/:id");
+		return $resource("http://localhost:8070/tvconfig/:id");
 	}]);
