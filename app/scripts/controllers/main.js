@@ -2,16 +2,12 @@
 
 /**
  * @ngdoc function
- * @name monitorApp.controller:MainCtrl
+ * @name couchPotatoApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the monitorApp
+ * Controller of the couchPotatoApp
  */
-angular.module("monitorApp")
-	.controller("MainCtrl", function ($scope) {
-		$scope.awesomeThings = [
-			"HTML5 Boilerplate",
-			"AngularJS",
-			"Karma"
-		];
-	});
+angular.module("couchPotatoApp")
+	.controller("MainCtrl", ["$scope", "LocalTvConfig", function ($scope, LocalTvConfig) {
+		$scope.localTvConfig = LocalTvConfig.localTvConfig;
+	}]);

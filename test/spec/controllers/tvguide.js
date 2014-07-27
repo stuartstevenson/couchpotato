@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: TvGuideCtrl', function () {
 
   // load the controller's module
   beforeEach(module('couchPotatoApp'));
 
-  var MainCtrl,
+  var TvGuideCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    TvGuideCtrl = $controller('TvGuideCtrl', {
       $scope: scope
     });
   }));

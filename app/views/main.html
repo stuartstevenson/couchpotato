@@ -1,8 +1,11 @@
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div ng-hide="localTvConfig" class="col-md-6 col-md-offset-3">
         <div class="jumbotron text-center">
             <h1>Couch Potato</h1>
             <p>Manage build monitors remotely and effortlessly.</p>
         </div>
     </div>
+	<div ng-show="localTvConfig" class="col-md-12">
+		<iframe src="{{localTvConfig.urls[0].url}}"></iframe>
+	</div>
 </div>
