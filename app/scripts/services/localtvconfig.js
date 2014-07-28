@@ -13,8 +13,10 @@ angular.module("couchPotatoApp")
 
 		function getLocalTvConfig(){
 			var tvConfig = JSON.parse(window.localStorage.getItem(localStorageKey));
-			for(var url in tvConfig.urls){
-				tvConfig.urls[url].url = $sce.trustAsResourceUrl(tvConfig.urls[url].url);
+			if(tvConfig){
+				for(var url in tvConfig.urls){
+					tvConfig.urls[url].url = $sce.trustAsResourceUrl(tvConfig.urls[url].url);
+				}
 			}
 			return tvConfig;
 		}
