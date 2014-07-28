@@ -14,7 +14,7 @@ angular.module("couchPotatoApp")
 		});
 
 		$scope.setLocalTvConfig = function(tvConfig){
-			LocalTvConfig.setLocalTvConfig(tvConfig);
+			LocalTvConfig.setLocalTvConfigId(tvConfig.id);
 		};
 
 		$scope.edit = function(tvConfig){

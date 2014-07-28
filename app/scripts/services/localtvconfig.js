@@ -10,22 +10,17 @@
 angular.module("couchPotatoApp")
 	.service("LocalTvConfig", ["$sce", function LocalTvConfig($sce) {
 		var localStorageKey = "tvConfig";
-
-		function getLocalTvConfig(){
-			var tvConfig = JSON.parse(window.localStorage.getItem(localStorageKey));
-			if(tvConfig){
-				for(var url in tvConfig.urls){
-					tvConfig.urls[url].url = $sce.trustAsResourceUrl(tvConfig.urls[url].url);
-				}
+		var localTvConfigId;
+		this.getLocalTvConfigId = function(){
+			if(!localTvConfigId){
+				this.setLocalTvConfigId(window.localStorage.getItem(localStorageKey));
 			}
-			return tvConfig;
-		}
+			return localTvConfigId;
+		};
 
-		this.localTvConfig = getLocalTvConfig();
-
-		this.setLocalTvConfig = function(tvConfig){
-			window.localStorage.setItem(localStorageKey, JSON.stringify(tvConfig));
-			this.localTvConfig = tvConfig;
+		this.setLocalTvConfigId = function(id){
+			window.localStorage.setItem(localStorageKey, id);
+			localTvConfigId = id;
 		};
 
 	}]);
