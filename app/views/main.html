@@ -1,13 +1,13 @@
 <div class="row">
-    <div ng-hide="currentUrl" class="col-md-6 col-md-offset-3">
+    <div ng-hide="currentScreen" class="col-md-6 col-md-offset-3">
         <div class="jumbotron text-center">
             <h1>Couch Potato</h1>
             <p>Manage build monitors remotely and effortlessly.</p>
         </div>
     </div>
-	<div ng-show="currentUrl" class="col-md-12">
+	<div ng-show="currentScreen" class="col-md-12">
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" ng-src="{{currentUrl}}"></iframe>
+            <iframe class="embed-responsive-item" ng-src="{{currentScreen.url}}"></iframe>
         </div>
 	</div>
 </div>
