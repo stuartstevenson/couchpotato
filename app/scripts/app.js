@@ -2,26 +2,39 @@
 
 /**
  * @ngdoc overview
- * @name monitorApp
+ * @name couchPotatoApp
  * @description
- * # monitorApp
+ * # couchPotatoApp
  *
  * Main module of the application.
  */
 angular
-	.module("monitorApp", [
+	.module("couchPotatoApp", [
 		"ngAnimate",
 		"ngCookies",
 		"ngResource",
 		"ngRoute",
 		"ngSanitize",
-		"ngTouch"
+		"ngTouch",
+		"emguo.poller"
 	])
 	.config(function ($routeProvider) {
 		$routeProvider
 			.when("/", {
 				templateUrl: "views/main.html",
 				controller: "MainCtrl"
+			})
+			.when("/tvguide", {
+				templateUrl: "views/tvguide.html",
+				controller: "TvGuideCtrl"
+			})
+			.when("/tvconfig", {
+				templateUrl: "views/addedittvconfig.html",
+				controller: "AddEditTvConfigCtrl"
+			})
+			.when("/tvconfig/:id", {
+				templateUrl: "views/addedittvconfig.html",
+				controller: "AddEditTvConfigCtrl"
 			})
 			.otherwise({
 				redirectTo: "/"
