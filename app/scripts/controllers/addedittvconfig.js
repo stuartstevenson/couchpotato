@@ -17,11 +17,32 @@ angular.module('couchPotatoApp')
 		else{
 			$scope.tvConfig = new TvConfig({
 				id: -1,
-				urls: [{}]
+				urls: [{
+					sequence: 0
+				}]
 			});
 		}
+
+		function recalculateSequence(){
+			angular.forEach($scope.tvConfig.urls, function(key, index){
+				key.sequence = index;
+			});
+		}
+
+		$scope.moveUpInSequence = function(index){
+			var screen = $scope.tvConfig.urls.splice(index, 1)[0];
+			$scope.tvConfig.urls.splice(index - 1, 0, screen);
+			recalculateSequence();
+		};
+		$scope.moveDownInSequence = function(index){
+			var screen = $scope.tvConfig.urls.splice(index, 1)[0];
+			$scope.tvConfig.urls.splice(index + 1, 0, screen);
+			recalculateSequence();
+		};
 		$scope.addUrl = function(){
-			$scope.tvConfig.urls.push({});
+			$scope.tvConfig.urls.push({
+				sequence: $scope.tvConfig.urls.length
+			});
 		};
 		$scope.removeUrl = function(index){
 			$scope.tvConfig.urls.splice(index, 1)

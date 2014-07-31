@@ -6,7 +6,7 @@
 				<input id="description" class="form-control" type="text" ng-model="tvConfig.description" required />
 			</div>
 
-			<table class="table table-responsive">
+			<table class="table table-responsive table-striped table-hover">
 				<thead>
 				<tr>
 					<th></th>
@@ -19,11 +19,28 @@
 				<tr ng-repeat="screen in tvConfig.urls">
 					<td>{{$index + 1}}</td>
 					<td><input class="form-control" type="text" ng-model="screen.url" required/></td>
-					<td><input class="form-control" type="number" ng-model="screen.interval" required/></td>
+					<td><input class="form-control" type="number" ng-model="screen.interval" required min="10" max="300"/></td>
 					<td>
-						<a ng-hide="$first" ng-click="removeUrl($index)" class="btn btn-danger btn-sm">
-							<span class="glyphicon glyphicon-remove"></span>
-						</a>
+						<div class="btn-group">
+							<a ng-hide="$first" ng-click="moveUpInSequence($index)" class="btn btn-default" title="Move up">
+								<span class="glyphicon glyphicon-arrow-up"></span>
+							</a>
+							<span ng-show="$first" class="btn btn-default disabled">
+								<span class="glyphicon glyphicon-arrow-up"></span>
+							</span>
+							<a ng-hide="$last" ng-click="moveDownInSequence($index)" class="btn btn-default" title="Move down">
+								<span class="glyphicon glyphicon-arrow-down"></span>
+							</a>
+							<span ng-show="$last" class="btn btn-default disabled">
+								<span class="glyphicon glyphicon-arrow-down"></span>
+							</span>
+							<a ng-hide="$first" ng-click="removeUrl($index)" class="btn btn-danger" title="Delete">
+								<span class="glyphicon glyphicon-remove"></span>
+							</a>
+							<span ng-show="$first" class="btn btn-danger disabled">
+								<span class="glyphicon glyphicon-remove"></span>
+							</span>
+						</div>
 					</td>
 				</tr>
 				</tbody>
