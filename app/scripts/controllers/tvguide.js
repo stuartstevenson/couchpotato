@@ -17,7 +17,15 @@ angular.module("couchPotatoApp")
 			LocalTvConfig.setLocalTvConfigId(tvConfig.id);
 		};
 
+		$scope.removeLocalTvConfig = function(){
+			LocalTvConfig.setLocalTvConfigId(null);
+		};
+
 		$scope.edit = function(tvConfig){
 			$location.path("/tvconfig/" + tvConfig.id);
+		};
+
+		$scope.isCurrentlyWatching = function(tvConfig){
+			return tvConfig.id === Number(LocalTvConfig.getLocalTvConfigId());
 		};
 	}]);
